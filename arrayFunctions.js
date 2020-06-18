@@ -10,6 +10,13 @@
  */
 function getOdds(numbers) {
   // Your code here
+  var Oddnum = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 !== 0) {
+      Oddnum.push(numbers[i]);
+    }
+  }
+  return Oddnum;
 }
 
 /**
@@ -24,6 +31,13 @@ function getOdds(numbers) {
  */
 function getEvens(numbers) {
   // Your code here
+  var EvenNum = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+      EvenNum.push(numbers[i]);
+    }
+  }
+  return EvenNum;
 }
 
 /**
@@ -37,6 +51,11 @@ function getEvens(numbers) {
  */
 function getDuplicateCount(x, numbers) {
   // Your code here
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] === x) { sum = sum + 1; }
+  }
+  return sum;
 }
 
 /**
@@ -55,6 +74,13 @@ function getDuplicateCount(x, numbers) {
  */
 function youGottaCalmDown(s) {
   // Your code here
-}
+  let sum = 0;
+  let n = [];
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "!") { sum = sum + 1; }
+  }
+  n = s.slice(0, s.length - sum + 1);
 
+  return n;
+}
 module.exports = { getOdds, getEvens, getDuplicateCount, youGottaCalmDown };
